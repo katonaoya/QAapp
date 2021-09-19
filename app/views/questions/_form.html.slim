@@ -1,0 +1,14 @@
+.nav.justify-content-end
+  = link_to '一覧', questions_path, class: 'nav-link'
+
+= form_with model: question, local: true do |f|
+  .form_group
+    = f.label :title
+    = f.text_field :title, class: 'form-control'
+  .form_group
+    = f.label :content
+    = f.text_area :content, class: 'form-control'
+  .form_group
+    = f.label :solution
+    = f.check_box :solution, class: 'form-check_input'
+  =f.submit nil, class: 'btn btn-primary'

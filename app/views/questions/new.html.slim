@@ -1,0 +1,8 @@
+h1 質問をする
+
+- if @question.errors.present?
+  ul#error_explanation
+    - @question.errors.full_message.each do |message|
+      li= message
+
+= render partial: 'form', locals: {question: @question}
