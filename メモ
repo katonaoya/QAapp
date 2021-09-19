@@ -1,0 +1,14 @@
+- if current_user.admin?
+これ以下にあるコードは管理者権限のあるアカウントでしか表示されない。
+
+findメソッドは各モデルのidを検索キーとしてデータを取得するメソッド
+User.find(1) => user_idが1の人を探してくる。
+
+find_byメソッドは各モデルのid以外の条件を検索キーとしてデータを取得するメソッド
+User.find_by(name: jojo) => nameがjojoの人を探してくる
+
+whereメソッドは各モデルのid以外の条件で検索する場合、該当するデータが全て取得する
+User.where(name: jojo) => nameがjojoの人を全員探してくる
+
+@task = Task.new(task_params.merge(user_id: current_user.id))
+task_paramsというハッシュの中のuser_idの項目にcurrent_user.idを入れる
